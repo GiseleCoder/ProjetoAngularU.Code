@@ -11,6 +11,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { VerificarComponent } from './verificar/verificar.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PaginaAdmComponent } from './pagina-adm/pagina-adm.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AboutComponent,
     CadastroComponent,
     VerificarComponent,
-    LoginComponent
+    LoginComponent,
+    PaginaAdmComponent
   ],
   imports: [
     BrowserModule,

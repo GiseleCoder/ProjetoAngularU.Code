@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="text-center mt-5">
+        <h2>Listagem de cadastrados</h2>
+    </div>
+
+    <table class="table mt-5">
+        <thead>
+            <tr>
+                <th>NOME</th>
+                <th>CPF</th>
+                <th>ENDEREÇO</th>
+                <th>TELEFONE</th>
+            </tr>
+        </thead>
+
+        <tbody *ngFor="let cadastro of cadastros"> 
+            <tr>
+                <td>{{ cadastro.nome }}</td>
+                <td>{{ cadastro.cpf }}</td>
+                <td>{{ cadastro.endereco }}</td>
+                <td>{{ cadastro.telefone }}</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>

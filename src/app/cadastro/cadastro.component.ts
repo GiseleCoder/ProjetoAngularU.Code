@@ -17,7 +17,9 @@ export class CadastroComponent implements OnInit {
 
   dateConfig: BsDatepickerConfig = new BsDatepickerConfig();
 
-  constructor() { }
+  constructor(
+    
+  ) { }
 
   ngOnInit(): void {
     this.cadastroForm = new FormGroup({
@@ -41,5 +43,5 @@ export class CadastroComponent implements OnInit {
     console.log(this.cadastroForm.value);
     this.cadastroCreated.emit(this.cadastroForm.value);
   }
-
+  
 }
