@@ -1,0 +1,82 @@
+<h2 class="text-center">CADASTRO</h2>
+
+<form [formGroup]="cadastroForm" (ngSubmit)="createCadastro()">
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Novo Cadastro</h4>
+    </div>
+
+    <div class="modal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" formControlName="nome" class="form-control" style="width: 100%;">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="cpf">CPF</label>
+                        <input type="text" formControlName="cpf" class="form-control" style="width: 100%;">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="endereco">Endereço</label>
+                        <input type="text" formControlName="endereco" class="form-control" style="width: 100%;">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="dataNascimento">Data de Nascimento</label>
+                        <input type="text" formControlName="dataNascimento" class="form-control" style="width: 100%"
+                        bsDatepicker placeholder="Data de Nascimento" [bsConfig]="dateConfig">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="telefone">Telefone</label>
+                        <input type="text" formControlName="telefone" class="form-control" style="width: 100%;">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="text" formControlName="email" class="form-control" style="width: 100%;">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="senha">Senha</label>
+                        <input type="text" formControlName="senha" class="form-control" style="width: 100%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <div class="container">
+            <button class="btn btn-info" type="submit" [disabled]="cadastroForm.invalid">
+                Cadastrar
+            </button>
+            <button type="button" class="btn btn-light ml-2" (click)="closeCadastroForm()">
+                Cancelar
+            </button>
+        </div>
+    </div>
+</form>
+
+
