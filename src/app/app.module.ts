@@ -11,7 +11,11 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { VerificarComponent } from './verificar/verificar.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModalModule } from 'ngx-bootstrap/modal';
 import { PaginaAdmComponent } from './pagina-adm/pagina-adm.component';
+import { BtnCreateCadastroComponent } from './pagina-adm/btn-create-cadastro/btn-create-cadastro.component';
+import { BtnEditCadastroComponent } from './pagina-adm/btn-edit-cadastro/btn-edit-cadastro.component';
+import { BtnDeleteCadastroComponent } from './pagina-adm/btn-delete-cadastro/btn-delete-cadastro.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import { PaginaAdmComponent } from './pagina-adm/pagina-adm.component';
     CadastroComponent,
     VerificarComponent,
     LoginComponent,
-    PaginaAdmComponent
+    PaginaAdmComponent,
+    BtnCreateCadastroComponent,
+    BtnEditCadastroComponent,
+    BtnDeleteCadastroComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -29,6 +37,7 @@ import { PaginaAdmComponent } from './pagina-adm/pagina-adm.component';
     ReactiveFormsModule,
     FormsModule,
     BsDatepickerModule.forRoot(),
+    ModalModule.forRoot(),
     BrowserAnimationsModule
   ],
   providers: [],
