@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { Cadastro } from '../models/cadastro.model';
+import { CadastroService } from '../services/cadastro.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -18,7 +19,7 @@ export class CadastroComponent implements OnInit {
   dateConfig: BsDatepickerConfig = new BsDatepickerConfig();
 
   constructor(
-    
+    private service: CadastroService
   ) { }
 
   ngOnInit(): void {
@@ -42,6 +43,10 @@ export class CadastroComponent implements OnInit {
     this.cadastro.push(this.cadastroForm.value);
     console.log(this.cadastroForm.value);
     this.cadastroCreated.emit(this.cadastroForm.value);
+
+    this.service.postCadastro(this.cadastroForm.value).subscribe(data =>{
+      console.log(data)
+    })
   }
   
 }

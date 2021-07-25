@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Cadastro } from '../models/cadastro.model';
+import { CadastroService } from '../services/cadastro.service';
 
 @Component({
   selector: 'app-pagina-adm',
@@ -10,9 +11,14 @@ export class PaginaAdmComponent implements OnInit {
 
   
   cadastros: Cadastro[] = []
-  constructor() { }
+  constructor(
+    private cadastroService: CadastroService
+  ) { }
 
   ngOnInit(): void {
+      this.cadastroService.getCadastro().subscribe(cadastro => {
+      this.cadastros = cadastro
+    });
   }
 
   onCadastroCreated(event: any){
@@ -22,5 +28,4 @@ export class PaginaAdmComponent implements OnInit {
     })
     console.log(this.cadastros);
   }
-
 }

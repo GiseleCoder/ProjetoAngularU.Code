@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output, TemplateRef } from '@angular/c
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Cadastro } from 'src/app/models/cadastro.model';
+import { CadastroService } from 'src/app/services/cadastro.service';
 
 @Component({
   selector: 'app-btn-create-cadastro',
@@ -15,7 +16,8 @@ export class BtnCreateCadastroComponent implements OnInit {
   cadastros: Cadastro[] = [];
 
   constructor(
-    private bsModalService: BsModalService
+    private bsModalService: BsModalService,
+    private cadastroService: CadastroService
   ) { }
 
   @Output() cadastroCreated = new EventEmitter<any> ();
@@ -26,6 +28,7 @@ export class BtnCreateCadastroComponent implements OnInit {
       cpf: new FormControl(null, [Validators.required, Validators.minLength(11), Validators.maxLength(11), Validators.pattern("[0-9]*$")]),
       endereco: new FormControl(null, [Validators.required, Validators.minLength(2), Validators.maxLength(40)]),
       telefone: new FormControl(null, [Validators.required, Validators.minLength(9), Validators.maxLength(15)]),
+      email: new FormControl(null, [Validators.required, Validators.minLength(3), Validators.maxLength(40)])
 
     })
   }
@@ -41,9 +44,9 @@ export class BtnCreateCadastroComponent implements OnInit {
 
   createCadastro(){
     this.closeModalCadastroForm();
-    this.cadastros.push(this.cadastroForm.value);
-    this.cadastroCreated.emit(this.cadastroForm.value);//emite evento
+    // this.cadastros.push(this.cadastroForm.value);
+    // this.cadastroCreated.emit(this.cadastroForm.value);//emite evento
     //
+    this.cadastroService.postCadastro(this.cadastroForm.value).subscribe();
   }
-
 }
