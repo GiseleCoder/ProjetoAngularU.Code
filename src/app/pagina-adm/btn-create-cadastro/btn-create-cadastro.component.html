@@ -14,10 +14,10 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="nome">Nome</label>
-                        <input type="text" formControlName="nome" class="form-control" style="width: 100%;">
+                        <input type="text" placeholder="Nome Completo" formControlName="nome" class="form-control" style="width: 100%;">
                     </div>
                 </div>
-            </div>''
+            </div>
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
@@ -37,8 +37,17 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
+                        <label for="dataNascimento">Data de Nascimento</label>
+                        <input type="text" formControlName="dataNascimento" class="form-control" style="width: 100%"
+                        bsDatepicker placeholder="Data de Nascimento" [bsConfig]="dateConfig">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
                         <label for="nome">Telefone</label>
-                        <input type="text" formControlName="telefone" class="form-control" style="width: 100%;">
+                        <input type="text" placeholder="Número com DDD " formControlName="telefone" class="form-control" style="width: 100%;">
                     </div>
                 </div>
             </div>
@@ -46,7 +55,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="nome">Email</label>
-                        <input type="text" formControlName="email" class="form-control" style="width: 100%;">
+                        <input type="email" formControlName="email" class="form-control" style="width: 100%;">
                     </div>
                 </div>
             </div>

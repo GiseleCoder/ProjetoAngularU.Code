@@ -18,6 +18,8 @@ import { BtnEditCadastroComponent } from './pagina-adm/btn-edit-cadastro/btn-edi
 import { BtnDeleteCadastroComponent } from './pagina-adm/btn-delete-cadastro/btn-delete-cadastro.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component'
+import { BtnVerificarCadastradoComponent } from './pagina-adm/btn-verificar-cadastrado/btn-verificar-cadastrado.component';
+import { BtnAdminComponent } from './pagina-adm/btn-admin/btn-admin.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { HeaderComponent } from './header/header.component'
     BtnCreateCadastroComponent,
     BtnEditCadastroComponent,
     BtnDeleteCadastroComponent,
+    BtnVerificarCadastradoComponent,
     HeaderComponent,
+    BtnAdminComponent,
     
   ],
   imports: [

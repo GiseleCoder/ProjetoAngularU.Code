@@ -18,6 +18,8 @@ export class PaginaAdmComponent implements OnInit {
   ngOnInit(): void {
       this.cadastroService.getCadastro().subscribe(cadastro => {
       this.cadastros = cadastro
+    }, error =>{
+      alert(`Ocorreu erro`)
     });
   }
 
@@ -26,6 +28,5 @@ export class PaginaAdmComponent implements OnInit {
     this.cadastros.forEach((cadastros, i) => {
       cadastros.id = i + 1;
     })
-    console.log(this.cadastros);
   }
 }

@@ -1,139 +1,97 @@
-<!-- <button class="btn btn-info float-left" (click)="openVerificarFormModal(verificarModalTemplate.planilhaJson)">
-    Verificar
+
+<button class="btn btn-light btn-xs mr-2" (click)="openCadastroFormModal(cadastroModalEditTemplate)">
+    Verificar Dados
 </button>
 
-
-
-<ng-template #verificarModalTemplate>
-    <form [formGroup]="verificarForm" (ngSubmit)="onSubmit()">
+<ng-template #cadastroModalEditTemplate>
+    <form [formGroup]="cadastroForm" (ngSubmit)="editCadastro()">
         <div class="modal-header">
-            <h4 class="modal-title pull-left">Verificar Cadastrado</h4>
+            <h4 class="modal-title pull-left">Dados do Cadastrado</h4>
+            <button type="button" class="close pull-right" aria-label="Fechar" (click)="closeModalCadastroForm()">
+            </button>
         </div>
+
         <div class="modal-body">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="nome">Nome</label>
-                            <input type="text" formControlName="nome" class="form-control" style="width: 100%;" value="{{verificarModalTemplate.planilhaJson}}">
-                        </div>
+                        <fieldset class="form-group">
+                            <span class="font-weight-bold text-uppercase h6">nome: </span>
+                            <input required type="text"  formControlName="nome" value=""
+                                class="form-control" style="width: 100%;" [(ngModel)]="nome" readonly>
+                        </fieldset>
                     </div>
                 </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Cliente</label>
-            <input type="text" class="form-control" formControlName="CLIENTE" value="{{planilhaDetalhes.PID}}"> 
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">CODIGO DMD</label>
-            <input type="text" class="form-control" formControlName="CODIGODMD" value="{{planilhaDetalhes.CODIGODMD}}">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Sigla RM</label>
-            <input type="text" class="form-control" formControlName="SIGLARM" value="{{planilhaDetalhes.SIGLARM}}">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Sigla Portal</label>
-            <input type="text" class="form-control" formControlName="SIGLAPORTAL" value="{{planilhaDetalhes.SIGLAPORTAL}}">
-          </div> 
-          <div class="form-group">
-            <label for="exampleInputPassword1">Comercial</label>
-            <input type="text" class="form-control" formControlName="COMERCIAL" value="{{planilhaDetalhes.COMERCIAL}}">
-          </div>
-          <div class="form-group">
-              <label for="exampleInputPassword1">Atendimento</label>
-              <input type="text" class="form-control" formControlName="ATENDIMENTO" value="{{planilhaDetalhes.ATENDIMENTO}}">
-          </div>  
-          <div class="form-group">
-              <label for="exampleInputPassword1">Auditoria</label>
-              <input type="text" class="form-control" formControlName="AUDITORIA" value="{{planilhaDetalhes.AUDITORIA}}">
-          </div> 
-          <div class="form-group">
-              <label for="exampleInputPassword1">Periodicidade</label>
-              <input type="text" class="form-control" formControlName="PERIODICIDADE" value="{{planilhaDetalhes.PERIODICIDADE}}">
-          </div> 
-          <div class="form-group">
-            <label for="exampleInputPassword1">Entrega</label>
-            <input type="text" class="form-control" formControlName="ENTREGA" value="{{planilhaDetalhes.ENTREGA}}">
-        </div> 
-          <div class="form-group">
-              <label for="exampleInputPassword1">Responsável</label>
-              <input type="text" class="form-control" formControlName="RESPONSAVEL" value="{{planilhaDetalhes.RESPONSAVEL}}">
-          </div> 
-          <div class="form-group">
-              <label for="exampleInputPassword1">Layout</label>
-              <input type="text" class="form-control" formControlName="LAYOUT" value="{{planilhaDetalhes.LAYOUT}}">
-          </div> 
-          <div class="form-group">
-              <label for="exampleInputPassword1">DM</label>
-              <input type="text" class="form-control" formControlName="DM" value="{{planilhaDetalhes.DM}}">
-          </div> 
-          <div class="form-group">
-              <label for="exampleInputPassword1">ODSDM</label>
-              <input type="text" class="form-control" formControlName="ODSDM" value="{{planilhaDetalhes.ODSDM}}">
-          </div> 
-          <div class="form-group">
-              <label for="exampleInputPassword1">EFV</label>
-              <input type="text" class="form-control" formControlName="EFV" value="{{planilhaDetalhes.EFV}}">
-          </div> 
-
-
-          <div class="form-group">
-              <label for="exampleInputPassword1">Caminho</label>
-              <input type="text" class="form-control" formControlName="CAMINHO" value="{{planilhaDetalhes.CAMINHO}}">
-          </div> 
-          <div class="form-group">
-              <label for="exampleInputPassword1">Origem</label>
-              <input type="text" class="form-control" formControlName="ORIGEM" value="{{planilhaDetalhes.ORIGEM}}">
-          </div> 
-          <div class="form-group">
-              <label for="exampleInputPassword1">Comercial</label>
-              <input type="text" class="form-control" formControlName="COMERCIAL" value="{{planilhaDetalhes.COMERCIAL}}">
-          </div> 
-          <div class="form-group">
-              <label for="exampleInputPassword1">Portal</label>
-              <input type="text" class="form-control" formControlName="PORTAL" value="{{planilhaDetalhes.PORTAL}}">
-          </div> 
-          <div class="form-group">
-              <label for="exampleInputPassword1">FTP</label>
-              <input type="text" class="form-control" formControlName="FTP" value="{{planilhaDetalhes.FTP}}">
-          </div> 
-          <div class="form-group">
-              <label for="exampleInputPassword1">Observação</label>
-              <input type="text" class="form-control" formControlName="OBSERVACAO" value="{{planilhaDetalhes.OBSERVACAO}}">
-          </div> 
-          <div class="form-group">
-            <label for="exampleInputPassword1">Mailing</label>
-            <input type="text" class="form-control" formControlName="MAILING" value="{{planilhaDetalhes.MAILING}}">
-           </div> 
-           <div class="form-group">
-            <label for="exampleFormControlSelect1">Example select</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-              <option>Produção</option>
-              <option>Other</option>
-            </select>
-          </div>
-          </form>
-    <form [formGroup]="verificarForm">
-        
-
-        
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="cpf">CPF</label>
-                            <input type="text" formControlName="cpf" class="form-control" style="width: 100%;">
-                        </div>
+                        <fieldset class="form-group">
+                            <span class="font-weight-bold text-uppercase h6">cpf: </span>
+                            <input required type="text"  formControlName="cpf" value=""
+                                class="form-control" style="width: 100%;" [(ngModel)]="cpf" readonly>
+                        </fieldset>
+                      
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <fieldset class="form-group">
+                            <span class="font-weight-bold text-uppercase h6">data de nascimento: </span>
+                            <input required type="text"  formControlName="dataNascimento"
+                                class="form-control" style="width: 100%;" [(ngModel)]="dataNascimento" readonly>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <fieldset class="form-group">
+                            <span class="font-weight-bold text-uppercase h6">endereço: </span>
+                            <input required type="text"  formControlName="endereco" 
+                                class="form-control" style="width: 100%;" [(ngModel)]="endereco" readonly>
+                        </fieldset> 
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <fieldset class="form-group">
+                            <span class="font-weight-bold text-uppercase h6">telefone: </span>
+                            <input required type="text"  formControlName="telefone" value=""
+                                class="form-control" style="width: 100%;" [(ngModel)]="telefone" readonly>
+                        </fieldset>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <fieldset class="form-group">
+                            <span class="font-weight-bold text-uppercase h6">email: </span>
+                            <input required type="text"  formControlName="email" value=""
+                                class="form-control" style="width: 100%;" [(ngModel)]="email" readonly>
+                        </fieldset>
+
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <fieldset class="form-group">
+                            <span class="font-weight-bold text-uppercase h6">Data de Recebimento </span>
+                            <input required type="text"  formControlName="dataRecebimento" value=""
+                                class="form-control" style="width: 100%;" [(ngModel)]="dataRecebimento">
+                        </fieldset>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="modal-footer">
-            <div class="container">
-                <button type="button" class="btn btn-light ml-2" (click)="closeModalClienteForm()">
-                    Sair
+        <div class=" modal-footer">
+            <div class="container text-center">
+                <!-- <button class="btn btn-info" type="submit">Agendar
+                </button> -->
+                <button type="submit" class="btn btn-info " (click)="closeModalCadastroForm()">Salvar
                 </button>
+                <button type="button" class="btn btn-light ml-2" (click)="closeModalCadastroForm()"> Voltar </button>
             </div>
         </div>
     </form>
-</ng-template> -->
+
+</ng-template>
