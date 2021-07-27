@@ -1,3 +1,66 @@
 <app-header></app-header>
 
 <p>verificar works!</p>
+
+
+<div class="modal-body">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" formControlName="nome" class="form-control" style="width: 100%;">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="cpf">CPF</label>
+                    <input type="text" formControlName="cpf" class="form-control" style="width: 100%;">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="endereco">Endereço</label>
+                    <input type="text" formControlName="endereco" class="form-control" style="width: 100%;">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="dataNascimento">Data de Nascimento</label>
+                    <input type="text" formControlName="dataNascimento" class="form-control" style="width: 100%"
+                    bsDatepicker placeholder="Data de Nascimento" [bsConfig]="dateConfig">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="telefone">Telefone</label>
+                    <input type="text" formControlName="telefone" class="form-control" style="width: 100%;">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="text" formControlName="email" class="form-control" style="width: 100%;">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" formControlName="senha" class="form-control" style="width: 100%;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
