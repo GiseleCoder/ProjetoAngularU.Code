@@ -1,0 +1,9 @@
+.font{
+    font-size:1.2rem;
+}
+.container{
+    background-color: azure;
+    width: 80%;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}

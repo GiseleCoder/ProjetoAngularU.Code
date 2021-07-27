@@ -1,13 +1,13 @@
 
-<button class="btn btn-light btn-xs mr-2" (click)="openCadastroFormModal(cadastroModalEditTemplate)">
+<button class="btn btn-light btn-xs mr-2" (click)="openVerificaFormModal(cadastroModalEditTemplate)">
     Verificar Dados
 </button>
 
 <ng-template #cadastroModalEditTemplate>
-    <form [formGroup]="cadastroForm" (ngSubmit)="editCadastro()">
+    <form [formGroup]="cadastroForm" (ngSubmit)="verificaCadastro()">
         <div class="modal-header">
             <h4 class="modal-title pull-left">Dados do Cadastrado</h4>
-            <button type="button" class="close pull-right" aria-label="Fechar" (click)="closeModalCadastroForm()">
+            <button type="button" class="close pull-right" aria-label="Fechar" (click)="closeModalVerificaForm()">
             </button>
         </div>
 
@@ -87,9 +87,9 @@
             <div class="container text-center">
                 <!-- <button class="btn btn-info" type="submit">Agendar
                 </button> -->
-                <button type="submit" class="btn btn-info " (click)="closeModalCadastroForm()">Salvar
+                <button type="submit" class="btn btn-info " (click)="closeModalVerificaForm()">Salvar
                 </button>
-                <button type="button" class="btn btn-light ml-2" (click)="closeModalCadastroForm()"> Voltar </button>
+                <button type="button" class="btn btn-light ml-2" (click)="closeModalVerificaForm()"> Voltar </button>
             </div>
         </div>
     </form>

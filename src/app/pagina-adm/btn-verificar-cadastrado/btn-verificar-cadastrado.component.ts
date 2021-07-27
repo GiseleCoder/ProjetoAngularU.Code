@@ -50,7 +50,7 @@ export class BtnVerificarCadastradoComponent implements OnInit {
     this.dataRecebimento = this.verifica.dataRecebimento
   }
 
-  openCadastroFormModal(template: TemplateRef<any>) {
+  openVerificaFormModal(template: TemplateRef<any>) {
     this.cadastroFormBsModalRef = this.bsModalService.show(template, {
       class: 'moda-sl modal-dialog-centered',
       ignoreBackdropClick: true,
@@ -58,12 +58,12 @@ export class BtnVerificarCadastradoComponent implements OnInit {
     })
   }
 
-  closeModalCadastroForm(): void {
+  closeModalVerificaForm(): void {
     this.cadastroFormBsModalRef.hide();
   }
 
-  editCadastro() {
-    this.closeModalCadastroForm();
+  verificaCadastro() {
+    this.closeModalVerificaForm();
     this.cadastroService.editCadastroAdm(this.verifica.id, this.cadastroForm.value.nome, this.cadastroForm.value.cpf
       ,this.cadastroForm.value.dataNascimento, this.cadastroForm.value.endereco, this.cadastroForm.value.telefone, this.cadastroForm.value.email, this.cadastroForm.value.dataRecebimento).subscribe();
   }
